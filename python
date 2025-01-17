@@ -1,0 +1,50 @@
+""" John is passionate about maintaining a healthy lifestyle and has recently started using a fitness tracker to monitor his body fat percentage. He inputs his height and waist measurements into the tracker, and the program calculates and categorizes his body fat percentage based on certain criteria.
+
+
+
+Design a body fat percentage calculation is as follows.
+
+BF% = 64 − ( 20 * (height/waist) )
+
+
+
+The list below comes from the American Council and shows the average percentages in specified groups.
+
+Essential fat" if body fat percentage is between 2% and 5% (inclusive).
+"Athletes" if body fat percentage is between 6% and 13% (inclusive).
+"Fitness" if the body fat percentage is between 14% and 17% (inclusive).
+"Average" if body fat percentage is between 18% and 24% (inclusive).
+"Obese" for above 25+
+Input format :
+The first line of input consists of a floating-point value representing the person's height.
+
+The second line of input consists of a floating-point value representing the person's waist measurement.
+
+Output format :
+The first line output displays the calculated body fat percentage as a floating-point number with two decimal places.
+
+The second line output displays the descriptive category based on the body fat percentage, such as "Essential fat," "Athletes," "Fitness," "Average," or "Obese."
+
+"""
+
+
+height = float(input())
+waist = float(input())
+
+body_fat_percentage = 64 - (20 * (height / waist))
+
+category = ""
+
+if 2 <= body_fat_percentage <= 5:
+    category = "Essential fat"
+elif 6 <= body_fat_percentage <= 13:
+    category = "Athletes"
+elif 14 <= body_fat_percentage <= 17:
+    category = "Fitness"
+elif 18 <= body_fat_percentage <= 24:
+    category = "Average"
+else:
+    category = "Obese"
+
+print(f"{body_fat_percentage:.2f}%")
+print(f"{category}")
